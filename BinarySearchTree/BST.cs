@@ -24,8 +24,6 @@ namespace BinarySearchTree
             if (head == null)
             {
                 head = node;
-                Console.WriteLine("{0} Node added to head", item);
-                Console.ReadKey();
                 return;
             }
             Node current = head;
@@ -33,30 +31,51 @@ namespace BinarySearchTree
             {
                 while (current.left != null)
                 {
-                    current = current.left; //keep traversing left until the the next node is null
+                    current = current.left;
                 }
                 current.left = node;
-                Console.WriteLine("{0} Node added to left", item);
-                Console.ReadKey();
                 return;
             }
             else if ( item>current.data )
             {
                 while (current.right != null)
                 {
-                    current = current.right; //keep traversing right until the the next node is null
+                    current = current.right;
                 }
                 current.right = node;
-                Console.WriteLine("{0} Node added to right", item);
-                Console.ReadKey();
                 return;
             }
         }
 
-        public string Search()
+        public string Search(int searchItem)
         {
-            string searchPath = "";
-
+            string searchPath = "Head ";
+            Node current = head;
+            if (searchItem < current.data)
+            {
+                searchPath += "Left ";
+                while (current.left != null)
+                {
+                    if ( searchItem.Equals(current.left) )
+                    {
+                        return searchPath;
+                    }
+                    current = current.left;
+                }
+            }
+            else if (searchItem > current.data)
+            {
+                searchPath += "Right ";
+                while (current.right != null)
+                {
+                    if (searchItem.Equals(current.right))
+                    {
+                        return searchPath;
+                    }
+                    current = current.right;
+                }
+                return searchPath;
+            }
             return searchPath;
         }
 
