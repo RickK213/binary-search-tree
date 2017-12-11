@@ -28,7 +28,7 @@ namespace BinarySearchTree
             }
             Node current = head;
             bool nodeAdded = false;
-            while (!nodeAdded)
+            while ( !nodeAdded )
             {
                 if (item < current.data)
                 {
@@ -63,7 +63,7 @@ namespace BinarySearchTree
 
         public string Search(int searchItem)
         {
-            if (searchItem == head.data)
+            if ( searchItem == head.data )
             {
                 return "Head";
             }
@@ -81,6 +81,10 @@ namespace BinarySearchTree
                     }
                     else
                     {
+                        if (searchItem != current.data)
+                        {
+                            return "Not found";
+                        }
                         nodeFound = true;
                     }
                 }
@@ -93,6 +97,10 @@ namespace BinarySearchTree
                     }
                     else
                     {
+                        if (searchItem != current.data)
+                        {
+                            return "Not found";
+                        }
                         nodeFound = true;
                     }
                 }
