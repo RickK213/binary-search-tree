@@ -24,9 +24,6 @@ namespace BinarySearchTree
             //myBinarySearchTree.Add(64);
             //myBinarySearchTree.Add(11);
 
-            //Console.WriteLine( myBinarySearchTree.Search(8) );
-            //Console.ReadKey();
-
             //TEST CASE 2:
             myBinarySearchTree.Add(127);
             myBinarySearchTree.Add(45);
@@ -39,7 +36,7 @@ namespace BinarySearchTree
             myBinarySearchTree.Add(50);
             myBinarySearchTree.Add(100);
 
-            Console.WriteLine(myBinarySearchTree.Search(100));
+            Console.WriteLine(myBinarySearchTree.Search(72));
             Console.ReadKey();
 
         }
