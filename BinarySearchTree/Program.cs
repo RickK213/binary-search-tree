@@ -10,6 +10,14 @@ namespace BinarySearchTree
     {
         static void Main(string[] args)
         {
+            BST myBinarySearchTree = new BST();
+            myBinarySearchTree.Add(8);
+            myBinarySearchTree.Add(10);
+            myBinarySearchTree.Add(6);
+            myBinarySearchTree.Add(8);
+            myBinarySearchTree.Add(3);
+
+
         }
     }
 }
