@@ -8,7 +8,7 @@ namespace BinarySearchTree
 {
     class Node
     {
-        public int data; //this is public because we're being lazy
+        public int data;
         public Node left;
         public Node right;
 

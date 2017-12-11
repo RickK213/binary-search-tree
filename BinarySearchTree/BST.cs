@@ -27,57 +27,81 @@ namespace BinarySearchTree
                 return;
             }
             Node current = head;
-            if ( item<current.data )
+            bool nodeAdded = false;
+            while (!nodeAdded)
             {
-                while (current.left != null)
+                if (item < current.data)
                 {
-                    current = current.left;
+                    if (current.left != null)
+                    {
+                        current = current.left;
+                    }
+                    else
+                    {
+                        current.left = node;
+                        nodeAdded = true;
+                    }
                 }
-                current.left = node;
-                return;
-            }
-            else if ( item>current.data )
-            {
-                while (current.right != null)
+                else if (item > current.data)
                 {
-                    current = current.right;
+                    if (current.right != null)
+                    {
+                        current = current.right;
+                    }
+                    else
+                    {
+                        current.right = node;
+                        nodeAdded = true;
+                    }
                 }
-                current.right = node;
-                return;
+                else
+                {
+                    nodeAdded = true;
+                }
             }
         }
 
         public string Search(int searchItem)
         {
-            string searchPath = "Head ";
-            Node current = head;
-            if (searchItem < current.data)
+            if (searchItem == head.data)
             {
-                searchPath += "Left ";
-                while (current.left != null)
-                {
-                    if ( searchItem.Equals(current.left) )
-                    {
-                        return searchPath;
-                    }
-                    current = current.left;
-                }
+                return "Head";
             }
-            else if (searchItem > current.data)
+            string searchPath = "";
+            Node current = head;
+            bool nodeFound = false;
+            while (!nodeFound)
             {
-                searchPath += "Right ";
-                while (current.right != null)
+                if (searchItem < current.data)
                 {
-                    if (searchItem.Equals(current.right))
+                    searchPath += "Left ";
+                    if (current.left != null)
                     {
-                        return searchPath;
+                        current = current.left;
                     }
-                    current = current.right;
+                    else
+                    {
+                        nodeFound = true;
+                    }
                 }
-                return searchPath;
+                else if (searchItem > current.data)
+                {
+                    searchPath += "Right ";
+                    if (current.right != null)
+                    {
+                        current = current.right;
+                    }
+                    else
+                    {
+                        nodeFound = true;
+                    }
+                }
+                else
+                {
+                    nodeFound = true;
+                }
             }
             return searchPath;
         }
-
     }
 }
