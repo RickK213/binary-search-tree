@@ -81,10 +81,6 @@ namespace BinarySearchTree
                     }
                     else
                     {
-                        if (searchItem != current.data)
-                        {
-                            return "Not found";
-                        }
                         nodeFound = true;
                     }
                 }
@@ -97,10 +93,6 @@ namespace BinarySearchTree
                     }
                     else
                     {
-                        if (searchItem != current.data)
-                        {
-                            return "Not found";
-                        }
                         nodeFound = true;
                     }
                 }
@@ -108,6 +100,10 @@ namespace BinarySearchTree
                 {
                     nodeFound = true;
                 }
+            }
+            if (searchItem != current.data)
+            {
+                return "Not found";
             }
             return searchPath;
         }
