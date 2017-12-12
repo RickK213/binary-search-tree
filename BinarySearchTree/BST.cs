@@ -67,14 +67,14 @@ namespace BinarySearchTree
             {
                 return "Head";
             }
-            string searchPath = "";
+            StringBuilder searchPath = new StringBuilder();
             Node current = head;
             bool nodeFound = false;
             while (!nodeFound)
             {
                 if (searchItem < current.data)
                 {
-                    searchPath += "Left ";
+                    searchPath.Append("Left ");
                     if (current.left != null)
                     {
                         current = current.left;
@@ -86,7 +86,7 @@ namespace BinarySearchTree
                 }
                 else if (searchItem > current.data)
                 {
-                    searchPath += "Right ";
+                    searchPath.Append("Right ");
                     if (current.right != null)
                     {
                         current = current.right;
@@ -105,7 +105,7 @@ namespace BinarySearchTree
             {
                 return "Not found";
             }
-            return searchPath;
+            return searchPath.ToString();
         }
     }
 }
